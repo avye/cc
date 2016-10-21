@@ -126,6 +126,6 @@ describe('Dedeuplicate Test Suite', () => {
       }
     ];
 
-    expect(code.deduplicate(testDuplicateEmailData)).to.deep.equal(expectedDuplicateEmailData);
+    expect(code.deduplicate(testDuplicateDateData)).to.deep.equal(expectedDuplicateDateData);
   })
 })
