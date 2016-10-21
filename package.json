@@ -1,0 +1,19 @@
+{
+  "name": "marketo-cc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avye/marketo-cc.git"
+  },
+  "author": "Andrew Vye",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/avye/marketo-cc/issues"
+  },
+  "homepage": "https://github.com/avye/marketo-cc#readme"
+}
