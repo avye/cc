@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import * as code from '../index.js';
 
 describe('Test Suite', () => {
-  it('should have a failing test', () => {
-    expect(code.failingTest).to.equal(false);
+  it('should have a deduplicate function', () => {
+    expect(code.deduplicate).to.be.a('function');
   })
 })
