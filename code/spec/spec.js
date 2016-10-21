@@ -44,4 +44,38 @@ describe('Dedeuplicate Test Suite', () => {
 
     expect(code.deduplicate(testDuplicateIDData)).to.deep.equal(expectedDuplicateIDData);
   })
+
+  it('should remove duplicate email entries', () => {
+    let testDuplicateEmailData = [
+      {
+        "_id": "jkj238238jdsnfsj23",
+        "email": "foo@bar.com",
+        "firstName":  "John",
+        "lastName": "Smith",
+        "address": "123 Street St",
+        "entryDate": "2014-05-07T17:30:20+00:00"
+      },
+      {
+        "_id": "edu45238jdsnfsj23",
+        "email": "foo@bar.com",
+        "firstName":  "Ted",
+        "lastName": "Masters",
+        "address": "44 North Hampton St",
+        "entryDate": "2014-05-07T17:31:20+00:00"
+      }
+    ];
+
+    let expectedDuplicateEmailData = [
+      {
+        "_id": "edu45238jdsnfsj23",
+        "email": "foo@bar.com",
+        "firstName":  "Ted",
+        "lastName": "Masters",
+        "address": "44 North Hampton St",
+        "entryDate": "2014-05-07T17:31:20+00:00"
+      }
+    ];
+
+    expect(code.deduplicate(testDuplicateEmailData)).to.deep.equal(expectedDuplicateEmailData);
+  })
 })
