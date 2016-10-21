@@ -2,7 +2,7 @@
 import { expect } from 'chai';
 import * as code from '../index.js';
 
-describe('Dedeuplicate Test Suite', () => {
+describe('Deduplicate Test Suite', () => {
   it('should have a deduplicate function', () => {
     expect(code.deduplicate).to.be.a('function');
   })
@@ -127,5 +127,47 @@ describe('Dedeuplicate Test Suite', () => {
     ];
 
     expect(code.deduplicate(testDuplicateDateData)).to.deep.equal(expectedDuplicateDateData);
+  })
+
+  it('should return an ordered list arranged by date', () => {
+    let testDuplicateDateOrderData = [
+      {
+        "_id": "jkj238238jdsnfsj23",
+        "email": "foo@bar.com",
+        "firstName":  "John",
+        "lastName": "Smith",
+        "address": "123 Street St",
+        "entryDate": "2014-05-07T17:33:20+00:00"
+      },
+      {
+        "_id": "edu45238jdsnfsj23",
+        "email": "mae@bar.com",
+        "firstName":  "Theodore",
+        "lastName": "Masters",
+        "address": "44 North Hampton St",
+        "entryDate": "2014-05-07T17:32:20+00:00"
+      }
+    ];
+
+    let expectedDuplicateDateOrderData = [
+      {
+        "_id": "edu45238jdsnfsj23",
+        "email": "mae@bar.com",
+        "firstName":  "Theodore",
+        "lastName": "Masters",
+        "address": "44 North Hampton St",
+        "entryDate": "2014-05-07T17:32:20+00:00"
+      },
+      {
+        "_id": "jkj238238jdsnfsj23",
+        "email": "foo@bar.com",
+        "firstName":  "John",
+        "lastName": "Smith",
+        "address": "123 Street St",
+        "entryDate": "2014-05-07T17:33:20+00:00"
+      }
+    ];
+
+    expect(code.deduplicate(testDuplicateDateOrderData)).to.deep.equal(expectedDuplicateDateOrderData);
   })
 })
