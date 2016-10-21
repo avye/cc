@@ -24,8 +24,12 @@ export const deduplicate = (inputArray) => {
     }
   })
 
-  return Object.keys(ids).reduce((acc, el) => {
+  let result = Object.keys(ids).reduce((acc, el) => {
     acc.push(ids[el]);
     return acc;
   }, [])
+
+  return result.sort((a, b) => {
+    return (new Date(a.entryDate) - new Date(b.entryDate));
+  })
 }
