@@ -9,7 +9,7 @@ describe('CreateOutput Test Suite', () => {
     fs.access('./code/spec/specData/test.json', (err) => {
       if (!err) {
         // Delete it if it does
-        fs.unlink('./code/spec/specData/test.json')
+        fs.unlink('./code/spec/specData/test.json');
       }
     })
     // Check to see if the file exists already
@@ -17,7 +17,7 @@ describe('CreateOutput Test Suite', () => {
     fs.access('./code/spec/specData/dataTest.json', (err) => {
       if (!err) {
         // Delete it if it does
-        fs.unlink('./code/spec/specData/dataTest.json')
+        fs.unlink('./code/spec/specData/dataTest.json');
       }
     })
   })
@@ -46,7 +46,7 @@ describe('CreateOutput Test Suite', () => {
     fs.access('./code/spec/specData/test.json', (err) => {
       if (!err) {
         // Delete it if it does
-        fs.unlink('./code/spec/specData/test.json')
+        fs.unlink('./code/spec/specData/test.json');
       }
     })
     // Check to see if the file exists already
@@ -54,7 +54,7 @@ describe('CreateOutput Test Suite', () => {
     fs.access('./code/spec/specData/dataTest.json', (err) => {
       if (!err) {
         // Delete it if it does
-        fs.unlink('./code/spec/specData/dataTest.json')
+        fs.unlink('./code/spec/specData/dataTest.json');
       }
     })
   })

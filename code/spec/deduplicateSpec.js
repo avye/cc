@@ -255,7 +255,7 @@ describe('objectToSortedArray Test Suite', () => {
         "address": "44 North Hampton St",
         "entryDate": "2014-05-07T17:32:20+00:00"
       }
-    }
+    };
 
     let expectedSortedArray = [
       {

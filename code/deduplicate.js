@@ -40,7 +40,7 @@ export const objectToSortedArray = (obj) => {
   let array = Object.keys(obj).reduce((acc, el) => {
     acc.push(obj[el]);
     return acc;
-  }, [])
+  }, []);
 
   return array.sort((a,b) => {
     return (new Date(a.entryDate) - new Date(b.entryDate));
