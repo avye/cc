@@ -232,4 +232,8 @@ describe('objectToSortedArray Test Suite', () => {
   it('should have a objectToSortedArray function', () => {
     expect(objectToSortedArray).to.be.a('function');
   })
+
+  it('should have a return an array', () => {
+    expect(objectToSortedArray({})).to.be.an('array');
+  })
 })
