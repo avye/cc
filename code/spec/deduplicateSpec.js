@@ -1,6 +1,6 @@
 'use strict'
 import { expect } from 'chai';
-import { deduplicate } from '../deduplicate';
+import { deduplicate, isMoreRecent } from '../deduplicate';
 
 describe('Deduplicate Test Suite', () => {
   it('should have a deduplicate function', () => {
@@ -169,5 +169,11 @@ describe('Deduplicate Test Suite', () => {
     ];
 
     expect(deduplicate(testDuplicateDateOrderData)).to.deep.equal(expectedDuplicateDateOrderData);
+  })
+})
+
+describe('isMoreRecent Test Suite', () => {
+  it('should have a isMoreRecent function', () => {
+    expect(isMoreRecent).to.be.a('function');
   })
 })
