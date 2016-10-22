@@ -21,7 +21,7 @@ if (filename) {
   var deduplicatedFile = deduplicate(file.leads);
   var data = {leads: deduplicatedFile}
   createOutput(outputPath, data);
-  makeLog(outputPath, 'test');
+  makeLog(outputPath, file, data);
 } else {
   console.log('***** ERROR! You need to pass in the filename! *****');
 }
