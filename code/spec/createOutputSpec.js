@@ -20,8 +20,7 @@ describe('CreateOutput Test Suite', () => {
 
   it('should create a file', () => {
     createOutput();
-    fs.access('./code/spec/specData/test.json', (err) => {
-      expect(err).to.be.(null);
-    })
+    let exists = fs.existsSync('./code/spec/specData/test.json')
+    expect(exists).to.be.true;
   })
 })
