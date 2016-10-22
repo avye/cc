@@ -28,5 +28,8 @@
     "presets": [
       "es2015"
     ]
+  },
+  "dependencies": {
+    "deep-diff": "^0.3.4"
   }
 }
