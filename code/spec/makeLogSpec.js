@@ -18,8 +18,9 @@ describe('MakeLog Test Suite', () => {
     expect(makeLog).to.be.a('function');
   })
 
-  it('should create a file', () => {
-    makeLog();
+  it('should create a file given a filename', () => {
+    let filename = './code/spec/specData/test.json'
+    makeLog(filename);
     let exists = fs.existsSync('./code/spec/specData/testLog.json');
     expect(exists).to.be.true;
   })
