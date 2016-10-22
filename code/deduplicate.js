@@ -50,6 +50,6 @@ export const isMoreRecent = (firstDate, secondDate) => {
   return new Date(firstDate) <= new Date(secondDate);
 }
 
-export const objectToSortedArray = () => {
-  
+export const objectToSortedArray = (obj) => {
+  return [];
 }
