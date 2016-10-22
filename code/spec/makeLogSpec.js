@@ -38,7 +38,7 @@ describe('MakeLog Test Suite', () => {
     let logFilename = './code/spec/specData/dataTestLog.json';
     let data = JSON.stringify(['test']);
     makeLog(filename, data);
-    let fileData = JSON.parse(fs.readFileSync(logFilename, 'utf8'));
+    let fileData = fs.readFileSync(logFilename, 'utf8');
     expect(fileData).to.deep.equal(data);
   })
 
