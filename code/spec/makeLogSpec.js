@@ -12,6 +12,14 @@ describe('MakeLog Test Suite', () => {
         fs.unlink('./code/spec/specData/testLog.json')
       }
     })
+
+    // Check to see if the file exists already
+    fs.access('./code/spec/specData/dataTestLog.json', (err) => {
+      if (!err) {
+        // Delete it if it does
+        fs.unlink('./code/spec/specData/dataTestLog.json')
+      }
+    })
   })
 
   it('should have a makeLog function', () => {
@@ -25,12 +33,28 @@ describe('MakeLog Test Suite', () => {
     expect(exists).to.be.true;
   })
 
+  it('should populate that file given some data', () => {
+    let filename = './code/spec/specData/dataTest.json';
+    let logFilename = './code/spec/specData/dataTestLog.json';
+    let data = JSON.stringify(['test']);
+    makeLog(filename, data);
+    let fileData = JSON.parse(fs.readFileSync(logFilename, 'utf8'));
+    expect(fileData).to.deep.equal(data);
+  })
+
   after(() => {
     // Check to see if the file exists already
     fs.access('./code/spec/specData/testLog.json', (err) => {
       if (!err) {
         // Delete it if it does
         fs.unlink('./code/spec/specData/testLog.json')
+      }
+    })
+    // Check to see if the file exists already
+    fs.access('./code/spec/specData/dataTestLog.json', (err) => {
+      if (!err) {
+        // Delete it if it does
+        fs.unlink('./code/spec/specData/dataTestLog.json')
       }
     })
   })
