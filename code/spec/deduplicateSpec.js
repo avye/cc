@@ -180,4 +180,10 @@ describe('isMoreRecent Test Suite', () => {
   it('should return a boolean', () => {
     expect(isMoreRecent()).to.be.a('boolean');
   })
+
+  it('should return true if the second date is more recent', () => {
+    let firstDate = "2014-05-07T17:30:20+00:00";
+    let secondDate = "2014-05-07T17:33:20+00:00";
+    expect(isMoreRecent(firstDate, secondDate)).to.be.true;
+  })
 })
