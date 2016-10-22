@@ -12,6 +12,14 @@ describe('CreateOutput Test Suite', () => {
         fs.unlink('./code/spec/specData/test.json')
       }
     })
+    // Check to see if the file exists already
+    
+    fs.access('./code/spec/specData/dataTest.json', (err) => {
+      if (!err) {
+        // Delete it if it does
+        fs.unlink('./code/spec/specData/dataTest.json')
+      }
+    })
   })
 
   it('should have a createOutput function', () => {
@@ -26,7 +34,7 @@ describe('CreateOutput Test Suite', () => {
   })
 
   it('should populate that file given some data', () => {
-    let filename = './code/spec/specData/test.json';
+    let filename = './code/spec/specData/dataTest.json';
     let data = ['test'];
     createOutput(filename, data);
     let fileData = JSON.parse(fs.readFileSync(filename, 'utf8'));
