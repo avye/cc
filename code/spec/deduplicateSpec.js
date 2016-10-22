@@ -186,4 +186,10 @@ describe('isMoreRecent Test Suite', () => {
     let secondDate = "2014-05-07T17:33:20+00:00";
     expect(isMoreRecent(firstDate, secondDate)).to.be.true;
   })
+
+  it('should return true if the two dates are the same', () => {
+    let firstDate = "2014-05-07T17:30:20+00:00";
+    let secondDate = firstDate;
+    expect(isMoreRecent(firstDate, secondDate)).to.be.true;
+  })
 })
