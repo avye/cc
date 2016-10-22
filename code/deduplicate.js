@@ -33,3 +33,7 @@ export const deduplicate = (inputArray) => {
     return (new Date(a.entryDate) - new Date(b.entryDate));
   })
 }
+
+export const isMoreRecent = () => {
+  
+}
