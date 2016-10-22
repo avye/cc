@@ -16,17 +16,10 @@ export const deduplicate = (inputArray) => {
     }
   })
 
-  let removedEmailDuplicates = Object.keys(emails).reduce((acc, el) => {
-    acc.push(emails[el]);
-    return acc;
-  }, [])
-
-  let removedEmailDuplicatesSorted = removedEmailDuplicates.sort((a,b) => {
-    return (new Date(a.entryDate) - new Date(b.entryDate));
-  })
+  let removedEmailDuplicates = objectToSortedArray(emails);
 
   let ids = {};
-  removedEmailDuplicatesSorted.forEach((element) => {
+  removedEmailDuplicates.forEach((element) => {
     if (ids[element._id]) {
       if (isMoreRecent(ids[element._id].entryDate, element.entryDate)) {
         ids[element._id] = element;
@@ -36,14 +29,7 @@ export const deduplicate = (inputArray) => {
     }
   })
 
-  let result = Object.keys(ids).reduce((acc, el) => {
-    acc.push(ids[el]);
-    return acc;
-  }, [])
-
-  return result.sort((a, b) => {
-    return (new Date(a.entryDate) - new Date(b.entryDate));
-  })
+  return objectToSortedArray(ids);
 }
 
 export const isMoreRecent = (firstDate, secondDate) => {
