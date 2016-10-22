@@ -24,4 +24,12 @@ describe('CreateOutput Test Suite', () => {
     let exists = fs.existsSync('./code/spec/specData/test.json');
     expect(exists).to.be.true;
   })
+
+  it('should populate that file given some data', () => {
+    let filename = './code/spec/specData/test.json';
+    let data = ['test'];
+    createOutput(filename, data);
+    let fileData = JSON.parse(fs.readFileSync(filename, 'utf8'));
+    expect(fileData).to.deep.equal(data);
+  })
 })
