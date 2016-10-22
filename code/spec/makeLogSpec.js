@@ -6,18 +6,18 @@ import * as fs from 'fs';
 describe('MakeLog Test Suite', () => {
   before(() => {
     // Check to see if the file exists already
-    fs.access('./code/spec/specData/testLog.json', (err) => {
+    fs.access('./code/spec/specData/testLog.md', (err) => {
       if (!err) {
         // Delete it if it does
-        fs.unlink('./code/spec/specData/testLog.json')
+        fs.unlink('./code/spec/specData/testLog.md')
       }
     })
 
     // Check to see if the file exists already
-    fs.access('./code/spec/specData/dataTestLog.json', (err) => {
+    fs.access('./code/spec/specData/dataTestLog.md', (err) => {
       if (!err) {
         // Delete it if it does
-        fs.unlink('./code/spec/specData/dataTestLog.json')
+        fs.unlink('./code/spec/specData/dataTestLog.md')
       }
     })
   })
@@ -29,13 +29,13 @@ describe('MakeLog Test Suite', () => {
   it('should create a file given a filename with Log in the title', () => {
     let filename = './code/spec/specData/test.json'
     makeLog(filename);
-    let exists = fs.existsSync('./code/spec/specData/testLog.json');
+    let exists = fs.existsSync('./code/spec/specData/testLog.md');
     expect(exists).to.be.true;
   })
 
   it('should populate that file given some data', () => {
     let filename = './code/spec/specData/dataTest.json';
-    let logFilename = './code/spec/specData/dataTestLog.json';
+    let logFilename = './code/spec/specData/dataTestLog.md';
     let data = JSON.stringify(['test']);
     makeLog(filename, data);
     let fileData = fs.readFileSync(logFilename, 'utf8');
@@ -44,17 +44,17 @@ describe('MakeLog Test Suite', () => {
 
   after(() => {
     // Check to see if the file exists already
-    fs.access('./code/spec/specData/testLog.json', (err) => {
+    fs.access('./code/spec/specData/testLog.md', (err) => {
       if (!err) {
         // Delete it if it does
-        fs.unlink('./code/spec/specData/testLog.json')
+        fs.unlink('./code/spec/specData/testLog.md')
       }
     })
     // Check to see if the file exists already
-    fs.access('./code/spec/specData/dataTestLog.json', (err) => {
+    fs.access('./code/spec/specData/dataTestLog.md', (err) => {
       if (!err) {
         // Delete it if it does
-        fs.unlink('./code/spec/specData/dataTestLog.json')
+        fs.unlink('./code/spec/specData/dataTestLog.md')
       }
     })
   })
