@@ -9,6 +9,18 @@ module.exports = function(grunt) {
         },
         src: ['code/**/*.js']
       }
+    },
+
+    babel: {
+        options: {
+            sourceMap: false,
+            presets: ['es2015']
+        },
+        dist: {
+            files: {
+                'dist/app.js': 'code/index.js'
+            }
+        }
     }
 
   });
