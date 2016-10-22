@@ -35,5 +35,5 @@ export const deduplicate = (inputArray) => {
 }
 
 export const isMoreRecent = () => {
-  
+  return false;
 }
