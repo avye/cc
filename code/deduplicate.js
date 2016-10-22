@@ -7,12 +7,12 @@ export const deduplicate = (inputArray) => {
 
   inputArray.forEach((element) => {
     if (ids[element._id]) {
-      if (new Date(ids[element._id].entryDate) <= new Date(element.entryDate)) {
+      if (isMoreRecent(ids[element._id].entryDate, element.entryDate)) {
         ids[element._id] = element;
         emails[element.email] = element;
       }
     } else if (emails[element.email]) {
-      if (new Date(emails[element.email].entryDate) <= new Date(element.entryDate)) {
+      if (isMoreRecent(emails[element.email].entryDate, element.entryDate)) {
         // since ids is our main source of truth, remove and update the record there
         delete ids[emails[element.email]._id]
         ids[element._id] = element;
