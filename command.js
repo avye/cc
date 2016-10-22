@@ -9,7 +9,7 @@ var outputFilename = process.argv[3] || filename
 
 if (filename) {
   var filePath = './input/' + filename;
-
+  var outputPath = './output/' + outputFilename
   // Check if the file is there, will throw an error if it is not
   fs.accessSync(filePath)
 
@@ -17,8 +17,9 @@ if (filename) {
   var file = require(filePath);
 
   // Could have option flag to alter if the structure of the json changes
-  var deduplicatedFile = deduplicate([]);
-  console.log('The file ', file);
+  var deduplicatedFile = deduplicate(file.leads);
+  var data = {leads: deduplicatedFile}
+  createOutput(outputPath, data);
 } else {
   console.log('***** ERROR! You need to pass in the filename! *****');
 }
