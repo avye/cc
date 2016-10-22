@@ -236,4 +236,45 @@ describe('objectToSortedArray Test Suite', () => {
   it('should have a return an array', () => {
     expect(objectToSortedArray({})).to.be.an('array');
   })
+
+  it('should have a return an array sorted by date', () => {
+    let testDateObject = {
+      "jkj238238jdsnfsj23": {
+        "_id": "jkj238238jdsnfsj23",
+        "email": "foo@bar.com",
+        "firstName":  "John",
+        "lastName": "Smith",
+        "address": "123 Street St",
+        "entryDate": "2014-05-07T17:33:20+00:00"
+      },
+      "edu45238jdsnfsj23": {
+        "_id": "edu45238jdsnfsj23",
+        "email": "mae@bar.com",
+        "firstName":  "Theodore",
+        "lastName": "Masters",
+        "address": "44 North Hampton St",
+        "entryDate": "2014-05-07T17:32:20+00:00"
+      }
+    }
+
+    let expectedSortedArray = [
+      {
+        "_id": "edu45238jdsnfsj23",
+        "email": "mae@bar.com",
+        "firstName":  "Theodore",
+        "lastName": "Masters",
+        "address": "44 North Hampton St",
+        "entryDate": "2014-05-07T17:32:20+00:00"
+      },
+      {
+        "_id": "jkj238238jdsnfsj23",
+        "email": "foo@bar.com",
+        "firstName":  "John",
+        "lastName": "Smith",
+        "address": "123 Street St",
+        "entryDate": "2014-05-07T17:33:20+00:00"
+      }
+    ];
+    expect(objectToSortedArray(testDateObject)).to.deep.equal(expectedSortedArray);
+  })
 })
