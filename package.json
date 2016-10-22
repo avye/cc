@@ -1,9 +1,12 @@
 {
   "name": "marketo-cc",
   "version": "1.0.0",
-  "description": "",
+  "description": "For Marketo",
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
+    "babel": "grunt babel",
+    "postinstall": "npm run babel",
+    "deduplicate": "node command.js"
   },
   "repository": {
     "type": "git",
