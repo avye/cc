@@ -35,7 +35,7 @@ export const deduplicate = (inputArray) => {
       ids[element._id] = element;
     }
   })
-  
+
   let result = Object.keys(ids).reduce((acc, el) => {
     acc.push(ids[el]);
     return acc;
@@ -48,4 +48,8 @@ export const deduplicate = (inputArray) => {
 
 export const isMoreRecent = (firstDate, secondDate) => {
   return new Date(firstDate) <= new Date(secondDate);
+}
+
+export const objectToSortedArray = () => {
+  
 }
