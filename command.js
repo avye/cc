@@ -1,6 +1,7 @@
 var fs = require('fs');
 var deduplicate = require('./dist/deduplicate').deduplicate;
 var createOutput = require('./dist/createOutput').createOutput;
+var makeLog = require('./dist/makeLog').makeLog;
 
 var filename = process.argv[2];
 
@@ -20,6 +21,7 @@ if (filename) {
   var deduplicatedFile = deduplicate(file.leads);
   var data = {leads: deduplicatedFile}
   createOutput(outputPath, data);
+  makeLog(outputPath, 'test');
 } else {
   console.log('***** ERROR! You need to pass in the filename! *****');
 }
