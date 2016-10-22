@@ -13,7 +13,7 @@ describe('CreateOutput Test Suite', () => {
       }
     })
     // Check to see if the file exists already
-    
+
     fs.access('./code/spec/specData/dataTest.json', (err) => {
       if (!err) {
         // Delete it if it does
@@ -39,5 +39,23 @@ describe('CreateOutput Test Suite', () => {
     createOutput(filename, data);
     let fileData = JSON.parse(fs.readFileSync(filename, 'utf8'));
     expect(fileData).to.deep.equal(data);
+  })
+
+  after(() => {
+    // Check to see if the file exists already
+    fs.access('./code/spec/specData/test.json', (err) => {
+      if (!err) {
+        // Delete it if it does
+        fs.unlink('./code/spec/specData/test.json')
+      }
+    })
+    // Check to see if the file exists already
+
+    fs.access('./code/spec/specData/dataTest.json', (err) => {
+      if (!err) {
+        // Delete it if it does
+        fs.unlink('./code/spec/specData/dataTest.json')
+      }
+    })
   })
 })
