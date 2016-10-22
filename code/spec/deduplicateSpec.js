@@ -1,14 +1,14 @@
 'use strict'
 import { expect } from 'chai';
-import * as code from '../index.js';
+import { deduplicate } from '../deduplicate';
 
 describe('Deduplicate Test Suite', () => {
   it('should have a deduplicate function', () => {
-    expect(code.deduplicate).to.be.a('function');
+    expect(deduplicate).to.be.a('function');
   })
 
   it('should return an array', () => {
-    expect(code.deduplicate([])).to.be.an('array');
+    expect(deduplicate([])).to.be.an('array');
   })
 
   it('should remove duplicate ID entries', () => {
@@ -42,7 +42,7 @@ describe('Deduplicate Test Suite', () => {
       }
     ];
 
-    expect(code.deduplicate(testDuplicateIDData)).to.deep.equal(expectedDuplicateIDData);
+    expect(deduplicate(testDuplicateIDData)).to.deep.equal(expectedDuplicateIDData);
   })
 
   it('should remove duplicate email entries', () => {
@@ -76,7 +76,7 @@ describe('Deduplicate Test Suite', () => {
       }
     ];
 
-    expect(code.deduplicate(testDuplicateEmailData)).to.deep.equal(expectedDuplicateEmailData);
+    expect(deduplicate(testDuplicateEmailData)).to.deep.equal(expectedDuplicateEmailData);
   })
 
   it('should prioritize removal of duplicates by date', () => {
@@ -126,7 +126,7 @@ describe('Deduplicate Test Suite', () => {
       }
     ];
 
-    expect(code.deduplicate(testDuplicateDateData)).to.deep.equal(expectedDuplicateDateData);
+    expect(deduplicate(testDuplicateDateData)).to.deep.equal(expectedDuplicateDateData);
   })
 
   it('should return an ordered list arranged by date', () => {
@@ -168,6 +168,6 @@ describe('Deduplicate Test Suite', () => {
       }
     ];
 
-    expect(code.deduplicate(testDuplicateDateOrderData)).to.deep.equal(expectedDuplicateDateOrderData);
+    expect(deduplicate(testDuplicateDateOrderData)).to.deep.equal(expectedDuplicateDateOrderData);
   })
 })
