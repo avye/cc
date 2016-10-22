@@ -1,5 +1,6 @@
 var fs = require('fs');
 var deduplicate = require('./dist/deduplicate').deduplicate;
+var createOutput = require('./dist/createOutput').createOutput;
 
 var filename = process.argv[2];
 

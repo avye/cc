@@ -18,7 +18,8 @@ module.exports = function(grunt) {
         },
         dist: {
             files: {
-                'dist/deduplicate.js': 'code/deduplicate.js'
+                'dist/deduplicate.js': 'code/deduplicate.js',
+                'dist/createOutput.js': 'code/createOutput.js'
             }
         }
     }
