@@ -24,5 +24,10 @@ describe('CreateOutput Test Suite', () => {
     expect(exists).to.be.true;
   })
 
-  it('should create a file given a particular filename')
+  it('should create a file given a particular filename', () => {
+    let filename = './code/spec/specData/newTest.json'
+    createOutput(filename);
+    let exists = fs.existsSync('./code/spec/specData/newTest.json');
+    expect(exists).to.be.true;
+  })
 })
