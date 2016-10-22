@@ -19,8 +19,9 @@ describe('CreateOutput Test Suite', () => {
   })
 
   it('should create a file', () => {
-    createOutput();
-    let exists = fs.existsSync('./code/spec/specData/test.json')
-    expect(exists).to.be.true;
+    createOutput(() => {
+      let exists = fs.existsSync('./code/spec/specData/test.json')
+      expect(exists).to.be.true;
+    });
   })
 })
