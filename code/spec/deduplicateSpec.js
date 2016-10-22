@@ -170,6 +170,40 @@ describe('Deduplicate Test Suite', () => {
 
     expect(deduplicate(testDuplicateDateOrderData)).to.deep.equal(expectedDuplicateDateOrderData);
   })
+
+  it('should prioritize by email first', () => {
+    let testDuplicateEmailAndIdData = [
+      {
+        "_id": "jkj238238jdsnfsj23",
+        "email": "foo@bar.com",
+        "firstName":  "John",
+        "lastName": "Smith",
+        "address": "123 Street St",
+        "entryDate": "2014-05-07T17:31:20+00:00"
+      },
+      {
+        "_id": "jkj238238jdsnfsj23",
+        "email": "foo@bar.com",
+        "firstName":  "Theodore",
+        "lastName": "Masters",
+        "address": "44 North Hampton St",
+        "entryDate": "2014-05-07T17:32:20+00:00"
+      }
+    ];
+
+    let expectedDuplicateEmailAndIdData = [
+      {
+        "_id": "jkj238238jdsnfsj23",
+        "email": "foo@bar.com",
+        "firstName":  "Theodore",
+        "lastName": "Masters",
+        "address": "44 North Hampton St",
+        "entryDate": "2014-05-07T17:32:20+00:00"
+      }
+    ];
+
+    expect(deduplicate(testDuplicateEmailAndIdData)).to.deep.equal(expectedDuplicateEmailAndIdData);
+  })
 })
 
 describe('isMoreRecent Test Suite', () => {
