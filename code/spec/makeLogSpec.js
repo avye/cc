@@ -33,13 +33,16 @@ describe('MakeLog Test Suite', () => {
     expect(exists).to.be.true;
   })
 
-  it('should populate that file given some data', () => {
+  it('should populate that file given some input and output data', () => {
     let filename = './code/spec/specData/dataTest.json';
     let logFilename = './code/spec/specData/dataTestLog.md';
-    let data = JSON.stringify(['test']);
-    makeLog(filename, data);
+    let inputData = 'input';
+    let outputData = 'output';
+    let resultData = 'inputoutput';
+
+    makeLog(filename, inputData, outputData);
     let fileData = fs.readFileSync(logFilename, 'utf8');
-    expect(fileData).to.deep.equal(data);
+    expect(fileData).to.deep.equal(resultData);
   })
 
   after(() => {
