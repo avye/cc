@@ -1,6 +1,6 @@
 'use strict'
 import { expect } from 'chai';
-import { deduplicate, isMoreRecent } from '../deduplicate';
+import { deduplicate, isMoreRecent, objectToSortedArray } from '../deduplicate';
 
 describe('Deduplicate Test Suite', () => {
   it('should have a deduplicate function', () => {
@@ -225,5 +225,11 @@ describe('isMoreRecent Test Suite', () => {
     let firstDate = "2014-05-07T17:30:20+00:00";
     let secondDate = firstDate;
     expect(isMoreRecent(firstDate, secondDate)).to.be.true;
+  })
+})
+
+describe('objectToSortedArray Test Suite', () => {
+  it('should have a objectToSortedArray function', () => {
+    expect(objectToSortedArray).to.be.a('function');
   })
 })
