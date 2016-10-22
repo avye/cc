@@ -176,4 +176,8 @@ describe('isMoreRecent Test Suite', () => {
   it('should have a isMoreRecent function', () => {
     expect(isMoreRecent).to.be.a('function');
   })
+
+  it('should return a boolean', () => {
+    expect(isMoreRecent()).to.be.a('boolean');
+  })
 })
