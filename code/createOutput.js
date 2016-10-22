@@ -1,7 +1,7 @@
 'use strict'
 import * as fs from 'fs';
 
-export const createOutput = () => {
+export const createOutput = (filename) => {
   let data = JSON.stringify('test data');
-  fs.appendFileSync('./code/spec/specData/test.json', data)
+  fs.appendFileSync(filename, data)
 }
