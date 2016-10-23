@@ -183,6 +183,14 @@ describe('Deduplicate Test Suite', () => {
       },
       {
         "_id": "jkj238238jdsnfsj23",
+        "email": "fake@bar.com",
+        "firstName":  "Ted",
+        "lastName": "Masters",
+        "address": "44 North Hampton St",
+        "entryDate": "2014-05-07T17:31:20+00:00"
+      },
+      {
+        "_id": "edu45238jdsnfsj23",
         "email": "foo@bar.com",
         "firstName":  "Theodore",
         "lastName": "Masters",
@@ -194,6 +202,14 @@ describe('Deduplicate Test Suite', () => {
     let expectedDuplicateEmailAndIdData = [
       {
         "_id": "jkj238238jdsnfsj23",
+        "email": "fake@bar.com",
+        "firstName":  "Ted",
+        "lastName": "Masters",
+        "address": "44 North Hampton St",
+        "entryDate": "2014-05-07T17:31:20+00:00"
+      },
+      {
+        "_id": "edu45238jdsnfsj23",
         "email": "foo@bar.com",
         "firstName":  "Theodore",
         "lastName": "Masters",
